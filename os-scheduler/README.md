@@ -1,70 +1,106 @@
-# Getting Started with Create React App
+# 🧠 OS Scheduler Visualizer
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A web-based interactive simulator for CPU scheduling algorithms with real-time visualization, performance analysis, and intelligent algorithm recommendations.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🚀 Features
 
-### `npm start`
+- ⚙️ Simulate CPU Scheduling Algorithms:
+  - First Come First Serve (FCFS)
+  - (Upcoming) Shortest Job First (SJF)
+  - (Upcoming) Round Robin (RR)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- 📊 Performance Metrics:
+  - Waiting Time
+  - Turnaround Time
+  - Execution Timeline (Gantt Chart)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- 🎮 Interactive UI:
+  - Add / Delete processes dynamically
+  - Real-time updates
+  - Visual scheduling representation
 
-### `npm test`
+- 🧠 Smart Recommendation System (Planned):
+  - Suggests best algorithm based on input characteristics
+  - Provides explanation for decision
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- 📈 Graphical Comparison (Planned):
+  - Compare algorithms visually using charts
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🛠️ Tech Stack
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Frontend: React.js
+- Visualization: Chart.js / Recharts (planned)
+- Styling: CSS
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## 📌 How It Works
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+1. Enter process details:
+   - Process ID
+   - Arrival Time
+   - Burst Time
+   - Priority (optional)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+2. Click **Run FCFS**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+3. The system:
+   - Sorts processes by arrival time
+   - Calculates start and finish times
+   - Computes waiting and turnaround times
+   - Displays execution order using a Gantt chart
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
 
-## Learn More
+## 🧪 Example
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Input:
+P1 → Arrival: 0, Burst: 5  
+P2 → Arrival: 2, Burst: 3  
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Output:
+- Execution Order: P1 → P2  
+- Waiting Time:
+  - P1: 0
+  - P2: 3  
+- Turnaround Time:
+  - P1: 5
+  - P2: 6  
 
-### Code Splitting
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 🔥 Upcoming Features
 
-### Analyzing the Bundle Size
+- ⏱️ Preemptive Scheduling (SRTF)
+- 🔄 Round Robin with Time Quantum
+- ⚡ Context Switching Cost Simulation
+- ⚠️ Starvation Detection
+- 🧠 Explainable "Theory Mode"
+- 📤 Export Results (PDF / CSV)
+- 🌙 Dark Mode UI
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+---
 
-### Making a Progressive Web App
+## 💡 Why This Project?
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Most scheduling simulators only show results.
 
-### Advanced Configuration
+This project focuses on:
+- Visualization
+- Real-world behavior simulation
+- Explainability
+- User interaction
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+---
 
-### Deployment
+## 📦 Setup Instructions
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```bash
+git clone https://github.com/your-username/os-scheduler-visualizer.git
+cd os-scheduler-visualizer
+npm install
+npm start
