@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import {FCFS} from './Algorithms/fcfs';
+import {SJF} from './Algorithms/sjf';
 function App() {
   const [output, setOutput] = useState(null);
   const [processes, setProcesses] = useState([]);
@@ -34,6 +35,10 @@ function App() {
 };
 const handleRun =() =>{
   const res=FCFS({processes});
+  setOutput(res);
+}
+const handleRunSJF =() =>{
+  const res=SJF({processes});
   setOutput(res);
 }
   return (
@@ -71,6 +76,7 @@ const handleRun =() =>{
         });
       }}>Add Process</button>
       <button onClick={handleRun}>Run FCFS</button>
+      <button onClick={handleRunSJF}>Run SJF</button>
     </div>
     <table>
   <thead>

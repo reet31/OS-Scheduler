@@ -4,7 +4,7 @@ export const SJF = ({processes}) => {
     let completed=[];
     let remaining=[...processes];
 
-    let timeine=[];
+    let timeline=[];
 
     while(remaining.length>0){
         let available=remaining.filter(p=>p.arrival<=time);
@@ -15,5 +15,24 @@ export const SJF = ({processes}) => {
         available.sort((a,b)=>a.burst-b.burst);
         let current=available[0];
         let start=time;
-        let finish=time+current.burst;
+        let finish=Number(time)+Number(current.burst);
+
+        completed.push({
+            ...current,
+            start,
+            finish,
+            waitingTime:start-current.arrival,
+            turnaroundTime:finish-current.arrival
+        });
+        timeline.push({
+            id:current.id,
+            start,
+            end:finish
+        })
+        time=finish;
+
+        remaining=remaining.filter(p=>p.id!==current.id);
+
+        }
+        return {result:completed,timeline};
     }
