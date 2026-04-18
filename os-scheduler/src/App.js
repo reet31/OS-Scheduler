@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import {FCFS} from './Algorithms/fcfs';
 import {SJF} from './Algorithms/sjf';
+import {SRTF} from './Algorithms/srtf';
 function App() {
   const [output, setOutput] = useState(null);
   const [processes, setProcesses] = useState([]);
@@ -41,6 +42,10 @@ const handleRunSJF =() =>{
   const res=SJF({processes});
   setOutput(res);
 }
+const handleRunSRTF =() =>{
+  const res=SRTF({processes});
+  setOutput(res);
+}
   return (
     //basic input form
     <>
@@ -77,6 +82,8 @@ const handleRunSJF =() =>{
       }}>Add Process</button>
       <button onClick={handleRun}>Run FCFS</button>
       <button onClick={handleRunSJF}>Run SJF</button>
+      <button onClick={handleRunSRTF}>Run SRTF</button>
+
     </div>
     <table>
   <thead>
