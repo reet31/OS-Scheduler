@@ -6,19 +6,19 @@ export function SRTF({processes}) {
         remaining:Number(p.burst)
     }));
     let time=Math.min(...procs.map(p=>p.arrival));
-    let completed=[];
+    let completed=0;
     let n=procs.length;
 
     let timeline=[];
 
     let lastProcess=null;
-    while(completed.length<n){
+    while(completed<n){
 
         let available=procs.filter
         (p=>p.arrival<=time && p.remaining>0);
 
         if(available.length===0){
-            time=Math.min(...procs.filter(p=>p.remaining>0).map(p=>p.arrival));
+            time++;
             continue;
         }
         available.sort((a,b)=>{
